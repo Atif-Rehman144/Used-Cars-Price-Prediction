@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #337ab7;
+        }
+        form {
+            margin-top: 50px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #337ab7;
+            color: white;
+            padding: 10px 20px;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Car Price Prediction</h1>
+        <form action="{{ url_for('predict')}}" method="post">
+            <input type="number" name="Year" placeholder="Year" required="required" />
+            <input type="number" name="Kilometers_Driven" placeholder="Kilometers Driven" required="required" />
+            <input type="number" name="Mileage" placeholder="Mileage(kmpl)" required="required" />
+            <input type="number" name="Engine" placeholder="Engine cc" required="required" />
+            <input type="number" name="Power" placeholder="Power(bhp)" required="required" />
+            <input type="number" name="Seats" placeholder="Seats" required="required" />
+
+            
+                <select name="Brand">
+                    <option value="Ambassador">Ambassador</option>
+                    <option value="Audi">Audi</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Bentley">Bentley</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Datsun">Datsun</option>
+                    <option value="Fiat">Fiat</option>
+                    <option value="Force">Force</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="ISUZU">ISUZU</option>
+                    <option value="Isuzu">Isuzu</option>
+                    <option value="Jaguar">Jaguar</option>
+                    <option value="Jeep">Jeep</option>
+                    <option value="Lamborghini">Lamborghini</option>
+                    <option value="Land">Land</option>
+                    <option value="Mahindra">Mahindra</option>
+                    <option value="Maruti">Maruti</option>
+                    <option value="Mercedes-Benz">Mercedes-Benz</option>
+                    <option value="Mini">Mini</option>
+                    <option value="Mitsubishi">Mitsubishi</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Porsche">Porsche</option>
+                    <option value="Renault">Renault</option>
+                    <option value="Skoda">Skoda</option>
+                    <option value="Tata">Tata</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="Volvo">Volvo</option>
+                </select>
+
+            </select>
+
+            <!-- Fuel Type -->
+            <select name="Fuel_Type">
+                <option value="CNG">CNG</option>
+                <option value="Diesel">Diesel</option>
+                <option value="LPG">LPG</option>
+                <option value="Petrol">Petrol</option>
+            </select>
+
+            <!-- Transmission -->
+            <select name="Transmission">
+                <option value="Automatic">Automatic</option>
+                <option value="Manual">Manual</option>
+            </select>
+
+            <!-- Owner Type -->
+            <select name="Owner_Type">
+                <option value="First">First</option>
+                <option value="Fourth & Above">Fourth & Above</option>
+                <option value="Second">Second</option>
+                <option value="Third">Third</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+        {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
