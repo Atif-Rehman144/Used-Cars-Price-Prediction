@@ -52,7 +52,6 @@ def predict():
 
     # Convert the features to a numpy array and make a prediction
     final_features = features.values
-    print(final_features)
     prediction = model.predict(final_features)
 
     return render_template('index.html', prediction_text='Estimated car price is {}'.format(prediction))
