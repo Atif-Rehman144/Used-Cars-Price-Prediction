@@ -16,7 +16,7 @@ relative_path = 'data/output.csv'
 file_path = os.path.join(base_dir, relative_path)
 df = pd.read_csv(file_path)
 
-relative_path = 'data/trained.csv'
+relative_path = 'data/training.csv'
 file_path = os.path.join(base_dir, relative_path)
 df_trained = pd.read_csv(file_path)
 
