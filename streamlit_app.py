@@ -13,6 +13,7 @@ def run():
 
     ## Brand options
     Brand = st.selectbox('Brand', ('Audi', 'BMW', 'Bentley', 'Chevrolet', 'Datsun', 'Fiat', 'Ford', 'Honda', 'Hyundai', 'ISUZU', 'Isuzu', 'Jaguar', 'Jeep', 'Lamborghini', 'Land', 'Mahindra', 'Maruti', 'Mercedes-Benz', 'Mini', 'Mitsubishi', 'Nissan', 'Porsche', 'Renault', 'Skoda', 'Tata', 'Toyota', 'Volkswagen', 'Volvo')) 
+    Model = st.text_input("Enter Model name")
     Fuel_Type = st.selectbox('Fuel Type', ('CNG', 'Diesel', 'LPG', 'Petrol'))
     Transmission = st.selectbox('Transmission', ('Automatic', 'Manual'))
     Owner_Type = st.selectbox('Owner Type', ('First', 'Fourth & Above', 'Second', 'Third'))
